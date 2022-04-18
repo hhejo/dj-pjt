@@ -9,6 +9,7 @@
 <body>
   {% if user.is_authenticated %}
     <h3>{{ user }}님, 안녕하세요.</h3>
+    <a href="{% url 'accounts:profile' user.username %}">내 프로필</a>
     <form action="{% url 'accounts:logout' %}" method="post">
       {% csrf_token %}
       <button type="submit">LOGOUT</button>
